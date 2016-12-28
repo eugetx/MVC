@@ -162,31 +162,32 @@
 </script>
 }
 
+<div class="page-header">
+    <h1>Master Details Entry Form</h1>
+</div>
 
-<h2>Master Details entry form</h2>
 <div class="container" style="max-width:640px">
     <div class="master">
-        <h4>Order details</h4>
+        <h4 class="text-center">Order details</h4>
         <table>
             <tr>
                 <td>Order No</td>
-                <td></td>
+                <td><input type="text" id="orderNo" class="form-control" /></td>
                 <td>Order Date</td>
-                <td>
-                    <input type="text" id="orderDate" data-provide="datepicker" class="form-control" />
-                    <span class="error">Valid order date required (ex. MM-dd-yyyy)</span>
-                </td>
+                <td><input type="text" id="orderDate" data-provide="datepicker" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><span class="error">Valid order numbre required.</span></td>
+                <td colspan="2"><span class="error">Valid order date required (ex. MM-dd-yyyy)</span></td>
             </tr>
             <tr>
                 <td>Description</td>
-                <td colspan="3">
-                    <textarea id="description" style="width:100%" class="form-control"></textarea>
-                </td>
+                <td colspan="4"><textarea id="description" @*style="width:100%"*@ class="form-control"></textarea></td>
             </tr>
         </table>
     </div>
-    <div class="details">
-        <h4>Order Items</h4>
+    <div class="details row">
+        <h4 class="text-center">Order Items</h4>
         <table>
             <tr>
                 <td>Item Name</td>
@@ -197,26 +198,35 @@
             <tr>
                 <td>
                     <input type="text" id="itemName" class="form-control" />
-                    <span class="error">Item name required</span>
                 </td>
                 <td>
                     <input type="text" id="quantity" class="form-control" />
-                    <span class="error">Valid quantity required</span>
                 </td>
                 <td>
                     <input type="text" id="rate" class="form-control" />
-                    <span class="error">Valid rate required</span>
+
                 </td>
                 <td>
                     <input type="button" id="add" value="add" class="btn btn-default" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="error">Item name required</span>
+                </td>
+                <td>
+                    <span class="error">Valid quantity required</span>
+                </td>
+                <td>
+                    <span class="error">Valid rate required</span>
                 </td>
             </tr>
         </table>
         <div id="orderItems" class="tablecontainer">
 
         </div>
-        <div style="padding:10px 0px; text-align:right">
-            <input id="submit" type="button" value="Save" style="padding:10px 20px" class="btn btn-success" />
+        <div style="padding:10px 0px; text-align:center">
+            <input id="submit" type="button" value="Save" @*style="padding:10px 20px"*@ class="btn btn-success" />
         </div>
     </div>
 </div>
